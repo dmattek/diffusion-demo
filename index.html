@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Molecular Diffusion Simulator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Molecular Diffusion Simulation</h1>
+
+  <div class="controls">
+    <div class="control-group">
+      <label>Number of Particles: <span id="numVal">200</span></label>
+      <input type="range" id="numParticles" min="10" max="500" value="200">
+    </div>
+    <div class="control-group">
+      <label>Diffusion Constant (D): <span id="diffVal">2.0</span></label>
+      <input type="range" id="diffConst" min="0.1" max="10" step="0.1" value="2">
+    </div>
+    <div class="control-group">
+      <label>Boundary Conditions:</label>
+      <div class="toggle-group">
+        <button class="toggle-btn active" id="reflectiveBtn">Reflective</button>
+        <button class="toggle-btn" id="periodicBtn">Periodic</button>
+      </div>
+    </div>
+    <div class="buttons">
+      <button class="btn-play" id="playBtn">⏸ Pause</button>
+      <button class="btn-primary" id="resetBtn">Reset (Center)</button>
+      <button class="btn-secondary" id="randomBtn">Randomize</button>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <p class="plot-label" style="padding-top:10px;">Particle Box</p>
+    <canvas id="boxCanvas"></canvas>
+  </div>
+
+  <div class="canvas-container">
+    <p class="plot-label" style="padding-top:10px;">Probability Density P(x)</p>
+    <canvas id="histCanvas"></canvas>
+  </div>
+
+  <div class="canvas-container">
+    <p class="plot-label" style="padding-top:10px;">Mean Squared Displacement ⟨x²⟩</p>
+    <canvas id="msdCanvas"></canvas>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
